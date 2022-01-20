@@ -1,0 +1,27 @@
+# Docker
+
+trigger:
+- master
+
+resources:
+- repo: sefl
+variables:
+  tag: '$(Build.buildId)'
+
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - jobs: Build
+    displayName: Build VM
+    pool: 
+      vmImage: 'ubuntu-latest'
+    steps:  
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Conex Docker Hub'
+    repository: 'stefancristianisit/aplicatieapi'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags:
+      $(tag)
