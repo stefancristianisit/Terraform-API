@@ -59,7 +59,7 @@ resource "azurerm_container_group" "tf_container_test" {
 
   container {
     name   = "whaterapi"
-    image  = "mcr.microsoft.com/azuredocs/aci-helloworld:latest"
+    image  = "stefancristianisit/aplicatieapi:latest"
     cpu    = "1"
     memory = "1"
 
