@@ -18,11 +18,11 @@ stages:
     pool: 
       vmImage: 'ubuntu-latest'
     steps:  
-- task: Docker@2
-  inputs:
-    containerRegistry: 'Conex Docker Hub'
-    repository: 'stefancristianisit/aplicatieapi'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
-    tags:
-      $(tag)
+    - task: Docker@2
+      inputs:
+         containerRegistry: 'Conex Docker Hub'
+         repository: 'stefancristianisit/aplicatieapi'
+         command: 'buildAndPush'
+         Dockerfile: '**/Dockerfile'
+         tags:
+           $(tag)
