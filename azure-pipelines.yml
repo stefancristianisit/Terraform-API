@@ -45,7 +45,7 @@ stages:
       name: 'RunTerraform'
       dispalyName:'RunTerraform'
       env:
+       ARM_TENANT_ID = $(ARM_TENANT_ID)
        ARM_SUBSCRIPTION_ID = $(ARM_SUBSCRIPTION_ID)
        ARM_SECRET = $(ARM_SECRET)
        ARM_CLIENT_ID = $(ARM_CLIENT_ID)
-       ARM_TENANT_ID = $(ARM_TENANT_ID)
