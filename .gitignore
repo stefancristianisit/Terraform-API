@@ -4,6 +4,9 @@ project.lock.json
 .DS_Store
 *.pyc
 
+# Terraform state and backup
+
+
 # Visual Studio Code
 .vscode
 
@@ -41,3 +44,6 @@ msbuild.wrn
 
 # Terraform
 .terraform
+.terraform.*
+terraform.tfstate
+terraform.tfstate.backup
