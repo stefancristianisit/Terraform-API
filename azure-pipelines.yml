@@ -33,24 +33,6 @@ stages:
   - job: Provision
     displayName: 'Provisioning Container Instance'
     pool:
-<<<<<<< HEAD
-      vmImage: 'ubuntu-latest'
-    variables: 
-    - group: TeraformEnvVars
-    steps:
-    - script: |
-        set -e
-        terraform init -input=false
-        terraform apply -input=false -auto-approve
-      name: 'RunTerraform'
-      displayName: 'Run Terraform'
-      env:
-        ARM_CLIENT_ID: $(ARM_CLIENT_ID)
-        ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
-        ARM_TENANT_ID: $(ARM_TENANT_ID)
-        ARM_SUBSCRIPTION_ID: $(ARM_SUBSCRIPTION_ID)
-        TF_VAR_imagebuild: $(tag)
-=======
      vmImage: 'ubuntu-latest'
     variables:
     - group: TerraformEnvVars
@@ -67,4 +49,3 @@ stages:
        ARM_SUBSCRIPTION_ID = $(ARM_SUBSCRIPTION_ID)
        ARM_SECRET = $(ARM_SECRET)
        ARM_CLIENT_ID = $(ARM_CLIENT_ID)
->>>>>>> 72616a222ade8d427a56b01b2e265ba237e35ae8
