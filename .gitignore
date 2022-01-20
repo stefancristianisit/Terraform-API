@@ -48,3 +48,4 @@ msbuild.wrn
 terraform.tfstate
 terraform.tfstate.backup
 terraform.tfvars
+terraform.ftvars
