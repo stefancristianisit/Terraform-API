@@ -13,7 +13,7 @@ stages:
 - stage: Build
   displayName: Build image
   jobs:
-  - jobs: Build
+  - job: Build
     displayName: Build VM
     pool: 
       vmImage: 'ubuntu-latest'
