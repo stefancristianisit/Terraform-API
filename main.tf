@@ -8,10 +8,10 @@ terraform {
 }
 
 # Configure the Microsoft Azure Provider
-/*variable "ARM_SUBSCRIPTION_ID" {}
-variable "ARM_CLIENT_ID" {}
-variable "ARM_SECRET" {}
-variable "TENANT_ID" {} */
+variable ARM_SUBSCRIPTION_ID {}
+variable ARM_CLIENT_ID {}
+variable ARM_SECRET {}
+variable ARM_TENANT_ID {} 
 
 provider "azurerm" {
   features {}
@@ -20,10 +20,19 @@ provider "azurerm" {
   # the AzureRM Provider can be found here:
   # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 
-  subscription_id = "${ARM_SUBSCRIPTION_ID}"
-  client_id       = "${ARM_CLIENT_ID}"
-  client_secret   = "${ARM_SECRET}"
-  tenant_id       = "${ARM_TENANT_ID}"
+  subscription_id = var.ARM_SUBSCRIPTION_ID
+  client_id       = var.ARM_CLIENT_ID
+  client_secret   = var.ARM_SECRET
+  tenant_id       = var.ARM_TENANT_ID
+
+}
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "tf_rg_blobstore_tf.file"
+    storage_account_name = "storageaccounttfsta"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }
 }
 
 # Create a resource group
