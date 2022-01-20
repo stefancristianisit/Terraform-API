@@ -4,7 +4,8 @@ trigger:
 - master
 
 resources:
-- repo: sefl
+- repo: self
+
 variables:
   tag: '$(Build.buildId)'
 
