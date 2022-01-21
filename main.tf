@@ -11,8 +11,7 @@ terraform {
 /*variable "arm_subscription_id" {}
 variable arm_tenant_id {} 
 variable arm_client_id {} */
-variable client_secret {
-}
+/*variable client_secret {} */
 
 provider "azurerm" {
   features {}
@@ -21,10 +20,10 @@ provider "azurerm" {
   # the AzureRM Provider can be found here:
   # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 
-  subscription_id = "8209f557-e8fe-46ae-950e-dd13d0f21eca"
+/*  subscription_id = "8209f557-e8fe-46ae-950e-dd13d0f21eca"
   tenant_id       = "85eb97a9-9b3a-450d-8531-f93c50de468b"
   client_id       = "c2a4d8db-e271-45d6-be28-f6eb743613a3"
-  client_secret   = var.client_secret
+  client_secret   = var.client_secret*/
 }
 
 terraform {
