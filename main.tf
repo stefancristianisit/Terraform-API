@@ -57,7 +57,7 @@ resource "azurerm_container_group" "tf_container_test" {
   ip_address_type = "public"
   dns_name_label      = "aplicatieAPI"
   os_type             = "Linux"
-
+  
   container {
     name   = "whaterapi"
     image  = "stefancristianisit/aplicatieapi"
