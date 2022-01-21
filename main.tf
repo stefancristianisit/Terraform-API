@@ -8,12 +8,11 @@ terraform {
 }
 
 # Configure the Microsoft Azure Provider
-variable arm_subscription_id {}
+/*variable "arm_subscription_id" {}
 variable arm_tenant_id {} 
-variable arm_client_id {}
-variable arm_secret {}
-
-
+variable arm_client_id {} */
+variable client_secret {
+}
 
 provider "azurerm" {
   features {}
@@ -22,10 +21,10 @@ provider "azurerm" {
   # the AzureRM Provider can be found here:
   # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 
-  subscription_id = var.arm_subscription_id
-  tenant_id       = var.arm_tenant_id
-  client_id       = var.arm_client_id
-  client_secret   = var.arm_secret
+  subscription_id = "8209f557-e8fe-46ae-950e-dd13d0f21eca"
+  tenant_id       = "85eb97a9-9b3a-450d-8531-f93c50de468b"
+  client_id       = "c2a4d8db-e271-45d6-be28-f6eb743613a3"
+  client_secret   = var.client_secret
 }
 
 terraform {
@@ -61,7 +60,7 @@ resource "azurerm_container_group" "tf_container_test" {
 
   container {
     name   = "whaterapi"
-    image  = "mcr.microsoft.com/azuredocs/aci-helloworld:latest"
+    image  = "stefancristianisit/aplicatieapi"
     cpu    = "1"
     memory = "1"
 
