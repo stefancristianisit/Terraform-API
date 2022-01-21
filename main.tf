@@ -34,6 +34,10 @@ terraform {
     key                  = "terraform.tfstate"
   }
 }
+variable "imagebuild" {
+  type        = string
+  description = "latest image build"
+}
 
 # Create a resource group
 resource "azurerm_resource_group" "tf_test" {
@@ -59,7 +63,7 @@ resource "azurerm_container_group" "tf_container_test" {
   
   container {
     name   = "whaterapi"
-    image  = "stefancristianisit/aplicatieapi"
+    image  = "stefancristianisit/aplicatieapi:${var.imagebuild}"
     cpu    = "1"
     memory = "1"
 
