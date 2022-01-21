@@ -39,7 +39,7 @@ stages:
     steps:
     - script: |
        set -e 
-
+       az login --service-principal --username $(ARM_CLIENT_ID) --password $(ARM_SECRET)  --tenant $(ARM_TENANT_ID) 
        terraform init -input=false
        terraform apply -input=false -auto-approve
       name: 'RunTerraform'
